@@ -5,4 +5,6 @@ npm i
 npm run dev
 ```
 
-![abrir frontsito](localhost:3000/front.html)
+![abrir frontsito](127.0.0.1:3000/front.html)
+
+![las shidas](https://www.xvideos.com/)
