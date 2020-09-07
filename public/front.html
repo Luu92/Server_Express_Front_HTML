@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="content"></div>
+    
+    <script>
+        const getProducts = async () => {
+            let response = await fetch('http://localhost:3000/productos/1')
+            let obj = await response.json()
+            const productos = [obj.producto];
+
+            console.log("productos", productos);
+
+            const d = document;
+            let div = d.querySelector("#content");
+
+            productos.forEach(producto => {
+                let divhijo = d.createElement('div');
+                divhijo.innerHTML = `
+                                        <p>${producto.price}</p>
+                                        <p>${producto.name}</p>
+                                        <p>${producto.year}</p>
+                `
+                div.appendChild(divhijo);
+            });
+
+            
+        }
+
+       getProducts()
+    </script>
+</body>
+</html>
