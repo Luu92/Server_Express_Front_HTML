@@ -4,7 +4,6 @@
 npm i
 npm run dev
 ```
+CORRER EN EL NAVEGADOR LA SIGUIENTE DIRECCIÓN PARA LAS CHIDAS :D 
 
-![abrir frontsito](127.0.0.1:3000/front.html)
-
-![las shidas](https://www.xvideos.com/)
+localhost:3000/front.html
