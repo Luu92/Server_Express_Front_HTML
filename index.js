@@ -49,6 +49,50 @@ async function main(){
         })
     })
     
+
+    app.get('/basicos-query', (solicitud, respuesta) => {
+        
+        console.log(solicitud.query);
+        let nombre = solicitud.query.nombre
+        let apat = solicitud.query.apat
+        let edad = solicitud.query.edad
+
+        respuesta.status(404).json({
+            nombre,
+            apat,
+            edad
+        })
+    })
+
+    app.get('/basicos-pathvariable/:nombre/:otracosa/:otracosa2', (solicitud, respuesta) => {
+
+        let otracosa = solicitud.params.otracosa
+        let otracosa2 = solicitud.params.otracosa2
+        let nombre = solicitud.params.nombre
+
+        const personas = ["burro", "fili", "luis", "jonh"];
+
+        respuesta.status(500).json({
+            persona: personas.filter( elVato => nombre.toLowerCase() !== elVato ),
+            otracosa,
+            otracosa2
+        })
+    })
+
+    app.post('/basico-body', (req, res) => {
+
+        console.log(req.body)
+
+        res.status(201).json({
+            newUser: {
+                username: req.body.username,
+                password: req.body.contraseña
+            }
+        })
+
+    })
+
+
     await app.listen(PORT);
     console.log("listen on port", PORT);
 
